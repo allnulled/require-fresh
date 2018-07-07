@@ -3,6 +3,10 @@
 
 # require-newly
 
+
+![](https://img.shields.io/badge/require--newly-v1.0.0-green.svg) ![](https://img.shields.io/badge/test-passing-green.svg) ![](https://img.shields.io/badge/coverage-88.24%25-green.svg) ![](https://img.shields.io/badge/stable-100%25-green.svg)
+
+
 Import Node.js modules but cleaning their cache previously.
 
 ## 1. Installation
@@ -13,25 +17,25 @@ Import Node.js modules but cleaning their cache previously.
 
 ```js
 // 1. Import the module:
-const requireFresh = require("require-newly");
+const requireNewly = require("require-newly");
 
 // 2. Use it to import other modules
-const myModule = requireFresh("./my-module.js");
+const myModule = requireNewly("./my-module.js");
 
 // 3. Change the contents of the modules that were already imported
 // ...
 
 // 4. Use it to import the same modules, but clearing the cache:
-const myModuleFresh = requireFresh("./my-module.js");
+const myModuleFresh = requireNewly("./my-module.js");
 ```
 
 ## 3. API
 
-### `const requireFresh = require("require-newly")`
+### `const requireNewly = require("require-newly")`
 
 ----
 
-### `requireFresh(module:String)`
+### `requireNewly(module:String)`
 
 
 **Type:** `{Function}`
@@ -50,7 +54,7 @@ const myModuleFresh = requireFresh("./my-module.js");
 
 ----
 
-### `requireFresh.purge(module:String)`
+### `requireNewly.purge(module:String)`
 
 
 **Type:** `{Function}`
@@ -68,7 +72,7 @@ const myModuleFresh = requireFresh("./my-module.js");
 
 ----
 
-### `requireFresh.search(module:String, callback:Function)`
+### `requireNewly.search(module:String, callback:Function)`
 
 
 **Type:** `{Function}`

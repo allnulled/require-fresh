@@ -2,6 +2,10 @@
  * 
  * # require-newly
  * 
+ * 
+ * ![](https://img.shields.io/badge/require--newly-v1.0.0-green.svg) ![](https://img.shields.io/badge/test-passing-green.svg) ![](https://img.shields.io/badge/coverage-88.24%25-green.svg) ![](https://img.shields.io/badge/stable-100%25-green.svg)
+ * 
+ * 
  * Import Node.js modules but cleaning their cache previously.
  * 
  * ## 1. Installation
@@ -12,25 +16,25 @@
  * 
  * ```js
  * // 1. Import the module:
- * const requireFresh = require("require-newly");
+ * const requireNewly = require("require-newly");
  * 
  * // 2. Use it to import other modules
- * const myModule = requireFresh("./my-module.js");
+ * const myModule = requireNewly("./my-module.js");
  * 
  * // 3. Change the contents of the modules that were already imported
  * // ...
  * 
  * // 4. Use it to import the same modules, but clearing the cache:
- * const myModuleFresh = requireFresh("./my-module.js");
+ * const myModuleFresh = requireNewly("./my-module.js");
  * ```
  * 
  * ## 3. API
  * 
- * ### `const requireFresh = require("require-newly")`
+ * ### `const requireNewly = require("require-newly")`
  * 
  * ----
  * 
- * ### `requireFresh(module:String)`
+ * ### `requireNewly(module:String)`
  * 
  * @type `{Function}`
  * @parameter `{String} module`. Path or name of the module to be retrieved.
@@ -38,8 +42,8 @@
  * @description Retrieves the specified module, but previously it clears the cache that was bound to that module.
  * 
  */
-var requireFresh = function(moduleName) {
-  requireFresh.purge(moduleName);
+var requireNewly = function(moduleName) {
+  requireNewly.purge(moduleName);
   return require(moduleName);
 };
 
@@ -47,15 +51,15 @@ var requireFresh = function(moduleName) {
  * 
  * ----
  * 
- * ### `requireFresh.purge(module:String)`
+ * ### `requireNewly.purge(module:String)`
  * 
  * @type `{Function}`
  * @parameter `{String} module`. Path or name of the module to which purge its cache.
  * @returns `{Void}`.
  * @description Removes a module from the cache
  */
-requireFresh.purge = function(moduleName) {
-  requireFresh.search(moduleName, function(mod) {
+requireNewly.purge = function(moduleName) {
+  requireNewly.search(moduleName, function(mod) {
     delete require.cache[mod.id];
   });
   Object.keys(module.constructor._pathCache).forEach(function(cacheKey) {
@@ -69,7 +73,7 @@ requireFresh.purge = function(moduleName) {
  * 
  * ----
  * 
- * ### `requireFresh.search(module:String, callback:Function)`
+ * ### `requireNewly.search(module:String, callback:Function)`
  * 
  * @type `{Function}`
  * @parameter `{String} module`. Path or name of the module to be retrieved.
@@ -77,7 +81,7 @@ requireFresh.purge = function(moduleName) {
  * @returns `{Void}`.
  * @description Traverses the cache to search for all the cached files of the specified module name
  */
-requireFresh.search = function(moduleName, callback) {
+requireNewly.search = function(moduleName, callback) {
   var mod = require.resolve(moduleName);
   if (mod && ((mod = require.cache[mod]) !== undefined)) {
     (function traverse(mod) {
@@ -89,7 +93,7 @@ requireFresh.search = function(moduleName, callback) {
   }
 };
 
-module.exports = requireFresh;
+module.exports = requireNewly;
 
 /**
  * 
