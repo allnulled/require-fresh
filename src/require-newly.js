@@ -1,18 +1,18 @@
 /**
  * 
- * # require-fresh
+ * # require-newly
  * 
  * Import Node.js modules but cleaning their cache previously.
  * 
  * ## 1. Installation
  * 
- * ~$ `npm install --save require-fresh`
+ * ~$ `npm install --save require-newly`
  * 
  * ## 2. Usage
  * 
  * ```js
  * // 1. Import the module:
- * const requireFresh = require("require-fresh");
+ * const requireFresh = require("require-newly");
  * 
  * // 2. Use it to import other modules
  * const myModule = requireFresh("./my-module.js");
@@ -26,7 +26,7 @@
  * 
  * ## 3. API
  * 
- * ### `const requireFresh = require("require-fresh")`
+ * ### `const requireFresh = require("require-newly")`
  * 
  * ----
  * 
