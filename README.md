@@ -3,7 +3,7 @@
 
 # require-fresh
 
-Retrieve Node.js modules but **deeply** cleaning their cache previously.
+Import Node.js modules but cleaning their cache previously.
 
 ## 1. Installation
 
@@ -126,4 +126,3 @@ This package is simply the implementation of [the solution of this issue](https:
 
 
 
-# Read this file
