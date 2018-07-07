@@ -1,6 +1,6 @@
 {
   "name": "require-newly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Import Node.js modules but cleaning their cache previously.",
   "main": "src/require-newly.js",
   "scripts": {
