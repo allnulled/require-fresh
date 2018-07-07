@@ -3,7 +3,7 @@
  * # require-newly
  * 
  * 
- * ![](https://img.shields.io/badge/require--newly-v1.0.0-green.svg) ![](https://img.shields.io/badge/test-passing-green.svg) ![](https://img.shields.io/badge/coverage-88.24%25-green.svg) ![](https://img.shields.io/badge/stable-100%25-green.svg)
+ * ![](https://img.shields.io/badge/require--newly-v1.0.1-green.svg) ![](https://img.shields.io/badge/test-passing-green.svg) ![](https://img.shields.io/badge/coverage-88.24%25-green.svg) ![](https://img.shields.io/badge/stable-100%25-green.svg)
  * 
  * 
  * Import Node.js modules but cleaning their cache previously.
